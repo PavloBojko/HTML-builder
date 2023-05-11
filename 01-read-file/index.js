@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const filePath = path.join(__dirname, 'text.txt');
 
 // fs.readFile(
 //     path.join(__dirname, 'text.txt'),
@@ -12,7 +13,7 @@ const path = require('path');
 
  
 //fs.ReadStream наследует от stream.Readable
-var stream = new fs.ReadStream('text.txt', {encoding: 'utf-8'});
+var stream = new fs.ReadStream(filePath, {encoding: 'utf-8'});
  
 stream.on('readable', function(){
     var data = stream.read();
